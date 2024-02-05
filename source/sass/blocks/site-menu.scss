@@ -1,0 +1,26 @@
+.site-menu {
+  @include ul-null;
+
+  @media (min-width: $tablet) {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 36px;
+    font-size: 15px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 17px;
+  }
+}
+
+.site-menu__item {
+  @media (min-width: $tablet) {
+    padding: 16px 0 0 0;
+  }
+}
+
+.site-menu__link {
+  text-decoration: none;
+  color: #000000;
+}

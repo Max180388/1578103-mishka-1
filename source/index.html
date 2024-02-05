@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Мишка</title>
-  </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS. Адаптивная вёрстка и автоматизация</a>».</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mishka - товары для дома ручной работы</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="./img/favicon/favicons.svg">
+  <link rel="apple-touch-icon" href="./img/favicons/180x180.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="preload" href="./fonts/opensans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/opensansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+</head>
 
-  </body>
+<body class="content">
+  <header class="content__header header">
+    <div class="header__logo-wrap">
+      <a class="header__logo">
+        <picture>
+          <source media="(min-width: 1150px)" srcset="./img/desktop-header-logo.svg">
+          <source media="(min-width: 768px)" srcset="./img/tablet-header-logo.svg">
+          <img class="header__logo-image" src="./img/mobile-header-logo.svg" alt="Mishka товары ручной работы" width="86" height="35">
+        </picture>
+      </a>
+    </div>
+    <nav class="header__nav nav">
+      <button class="nav__toggle" type="button">
+        <span class="nav__toggle-wrap">
+          <span class="visually-hidden">Открыть меню навигации</span>
+        </span>
+      </button>
+      <div class="nav__lists-wrap">
+        <ul class="nav__list site-menu">
+          <li class="nav__item site-menu__item">
+            <a href="#" class="nav__link site-menu__link">Каталог товаров</a>
+          </li>
+          <li class="nav__item site-menu__item">
+            <a href="#" class="nav__link site-menu__link">Вязание на заказ</a>
+          </li>
+        </ul>
+        <ul class="nav__list user-menu">
+          <li class="nav__item user-menu__item">
+            <a href="#" class="nav__link user-menu__link user-menu__link--search">
+              <span class="user-menu__link-text">Поиск по сайту </span>
+            </a>
+          </li>
+          <li class="nav__item user-menu__item">
+            <a href="#" class="nav__link user-menu__link user-menu__link--cart">Корзина: пока пуста</a>
+          </li>
+        </ul>
+        <ul class="nav__list submenu">
+          <li class="nav__item submenu__item">
+            <a href="#" class="nav__link submenu__link">Новые поступления</a>
+          </li>
+          <li class="nav__item submenu__item">
+            <a href="#" class="nav__link submenu__link">Распродажа</a>
+          </li>
+        </ul>
+        <p class="nav-advantages">Бесплатная доставка по России</p>
+      </div>
+    </nav>
+  </header>
+  <main class="content__maim">
+  </main>
+  <footer></footer>
+  <script src="./js/sctipt.js"></script>
+</body>
+
 </html>

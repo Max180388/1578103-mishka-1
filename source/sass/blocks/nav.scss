@@ -1,0 +1,220 @@
+.nav {
+  position: relative;
+
+  @media (min-width: $tablet) {
+    padding: 0 50px;
+  }
+}
+
+.nav__toggle {
+  @include button-null;
+  display: none;
+  width: 20px;
+  height: 14px;
+  position: absolute;
+  top: -47px;
+  right: 31px;
+  cursor: pointer;
+  z-index: 15;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.nav__toggle-wrap {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #231f20;
+  transition: background-color 0.6s ease-in;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: #231f20;
+    position: absolute;
+    left: 0;
+    transform-origin: center;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.nav--closed .nav__toggle {
+  display: block;
+  transition: background-color 0.7s ease;
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.nav--closed .nav__toggle-wrap::before,
+.nav--closed .nav__toggle-wrap::after {
+  width: 20px;
+  left: 0;
+  transition:
+    top 0.2s ease 0.3s,
+    bottom 0.2s ease 0.3s,
+    transform 0.3s ease-in,
+    width 0.15s ease,
+    left 0.15s ease;
+}
+
+.nav--opened .nav__toggle {
+  display: block;
+}
+
+.nav--opened .nav__toggle-wrap {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.nav--opened .nav__toggle-wrap::before,
+.nav--opened .nav__toggle-wrap::after {
+  width: 28px;
+  left: -4px;
+  transition:
+    top 0.2s ease,
+    bottom 0.2s ease,
+    transform 0.3s ease-in 0.2s,
+    width 0.15s ease 0.2s,
+    left 0.15s ease 0.2s;
+}
+
+.nav--opened .nav__toggle-wrap::before {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(-45deg);
+}
+
+.nav--opened .nav__toggle-wrap::after {
+  bottom: 50%;
+  margin-bottom: -1px;
+  transform: rotate(45deg);
+}
+
+.nav__lists-wrap {
+  transition:
+    top 1s ease-in-out,
+    display 5s ease 5s;
+
+  @media (min-width: $tablet) {
+    display: grid;
+    grid-template-columns: 319px 1fr;
+  }
+}
+
+.nav--closed .nav__lists-wrap {
+  width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  top: -600px;
+  left: 0;
+  z-index: 5;
+
+  @media (min-width: $tablet) {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.nav--opened .nav__lists-wrap {
+  width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+  @media (min-width: $tablet) {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.nav__item {
+  padding: 24px 0 21px 22px;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    box-sizing: border-box;
+    padding: 27px 0;
+  }
+
+  &:not(:first-child)::before,
+  &:last-child::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #ececec;
+    position: absolute;
+    left: 0;
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &:not(:first-child)::before {
+    top: 0;
+  }
+
+  &:last-child::after {
+    bottom: 0;
+  }
+}
+
+.nav__link {
+  display: block;
+  width: 190px;
+  margin: 0 auto;
+  padding: 5px 0;
+
+  @media (min-width: $tablet) {
+    width: unset;
+  }
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.nav-advantages {
+  margin: 0;
+  display: none;
+
+  @media (min-width: $tablet) {
+    display: block;
+    order: 3;
+    text-align: right;
+    padding-top: 20px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
