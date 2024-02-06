@@ -2,6 +2,15 @@
   min-height: 79px;
   position: relative;
 
+  @include t {
+    background-color: #fafafa;
+  }
+
+  @include d {
+    background-color: #fafafa;
+    overflow: hidden;
+  }
+
   &::before {
     content: "";
     width: 100%;
@@ -12,20 +21,18 @@
     bottom: 0;
     z-index: 10;
 
-    @media (min-width: $tablet) {
-      top: 88px;
+    @include t {
+      display: none;
     }
   }
 
-  &::after {
-    content: "";
-    width: 100%;
-    height: calc(100% - 89px);
-    background-color: rgb(127 241 241 / 50%);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
+  @include d {
+    &::after {
+      height: calc(100% - 89px);
+      background-color: #ffffff;
+      top: 0;
+      z-index: 2;
+    }
   }
 }
 
@@ -37,65 +44,66 @@
   position: relative;
   z-index: 10;
 
-  @media (min-width: $tablet) {
+  @include t {
     width: unset;
     height: unset;
     padding: 22px 0 0;
+    background-color: transparent;
     position: absolute;
     top: 0;
     left: 49px;
   }
 
-  @media (min-width: $desktop) {
+  @include d {
     padding: 9px 0 0;
     left: 50%;
     transform: translateX(-50%);
   }
+}
 
-  .header__logo {
-    display: block;
-    width: 89px;
-    height: 35px;
-    margin: 0 auto;
-    cursor: pointer;
+.header__logo {
+  display: block;
+  width: 89px;
+  height: 35px;
+  margin: 0 auto;
+  cursor: pointer;
 
-    @media (min-width: $tablet) {
-      width: unset;
-      height: unset;
-    }
+  @include t {
+    width: unset;
+    height: unset;
+  }
 
-    &:hover {
-      opacity: 0.6;
-    }
+  &:hover {
+    opacity: 0.6;
+  }
 
-    &:focus-visible {
+  &:focus-visible {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
       outline: none;
       opacity: 0.6;
     }
-
-    @supports not selector(:focus-visible) {
-      &:focus {
-        outline: none;
-        opacity: 0.6;
-      }
-    }
-
-    &:active {
-      opacity: 0.3;
-    }
   }
 
-  .header__logo-image {
-    display: block;
+  &:active {
+    opacity: 0.3;
+  }
+}
 
-    @media (min-width: $tablet) {
-      width: 113px;
-      height: 46px;
-    }
+.header__logo-image {
+  display: block;
 
-    @media (min-width: $desktop) {
-      width: 149px;
-      height: 72px;
-    }
+  @include t {
+    width: 113px;
+    height: 46px;
+  }
+
+  @include d {
+    width: 149px;
+    height: 72px;
   }
 }

@@ -1,0 +1,184 @@
+.welcom-button {
+  width: 100%;
+  min-height: 103px;
+  display: block;
+  box-sizing: border-box;
+  padding: 24px 105px 24px 29px;
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    opacity: 0.5;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: absolute;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    display: none;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: 5;
+  }
+
+  &:hover::after {
+    display: block;
+  }
+
+  &:focus-visible::after {
+    display: block;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::after {
+      display: block;
+    }
+  }
+
+  &:active::after {
+    display: none;
+  }
+}
+
+.welcom-button--left {
+  background-color: #63d1bb;
+
+  &::before {
+    background-image: url("../img/index/interior.svg");
+    top: 19px;
+    right: 21px;
+  }
+
+  &::after {
+    background-color: #59d5bc;
+  }
+
+  &:hover {
+    background-color: #59d5bc;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #59d5bc;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #59d5bc;
+    }
+  }
+
+  &:active {
+    background-color: #59d5bc;
+  }
+
+  &:hover::before {
+    opacity: 0.7;
+    top: 14px;
+  }
+
+  &:focus-visible::before {
+    opacity: 0.7;
+    top: 14px;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::before {
+      opacity: 0.7;
+      top: 14px;
+    }
+  }
+
+  &:active::before {
+    opacity: 0.3;
+    top: 19px;
+  }
+}
+
+.welcom-button--right {
+  background-color: #56c3b2;
+
+  &::before {
+    background-image: url("../img/index/toy.svg");
+    top: 16px;
+    right: 22px;
+  }
+
+  &::after {
+    background-color: #46c1ae;
+  }
+
+  &:hover {
+    background-color: #46c1ae;
+  }
+
+  &:focus-visible {
+    outline: none;
+    background-color: #46c1ae;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      background-color: #46c1ae;
+    }
+  }
+
+  &:active {
+    background-color: #46c1ae;
+  }
+
+  &:hover::before {
+    opacity: 0.7;
+    top: 11px;
+  }
+
+  &:focus-visible::before {
+    opacity: 0.7;
+    top: 11px;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus::before {
+      opacity: 0.7;
+      top: 11px;
+    }
+  }
+
+  &:active::before {
+    opacity: 0.3;
+    top: 16px;
+  }
+}
+
+.welcom-button:hover {
+  padding-top: 19px;
+}
+
+.welcom-button:focus-visible {
+  padding-top: 19px;
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:focus {
+    padding-top: 19px;
+  }
+}
+
+.welcom-button__text {
+  width: 130px;
+  display: block;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 24px;
+}

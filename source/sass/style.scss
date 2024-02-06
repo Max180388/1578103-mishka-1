@@ -3,9 +3,14 @@
 @import "./global/variables.scss";
 @import "./global/mixin.scss";
 
+@import "./components/mine-title.scss";
+
 @import "./blocks/content.scss";
 @import "./blocks/header.scss";
 @import "./blocks/nav.scss";
 @import "./blocks/site-menu.scss";
 @import "./blocks/user-menu.scss";
 @import "./blocks/submenu.scss";
+@import "./blocks/index/main.scss";
+@import "./blocks/index/welcom.scss";
+@import "./blocks/index/welcom-button.scss";

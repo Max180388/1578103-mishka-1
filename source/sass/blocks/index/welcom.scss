@@ -1,0 +1,20 @@
+.welcom {
+  min-height: 350px;
+  padding-top: 73px;
+  background-color: #fafafa;
+  background-image: image-set(url("../img/index/welcom-mobile.webp"), url("../img/index/welcom-mobile.jpg"));
+  background-position: 50% -17px;
+  background-repeat: no-repeat;
+  background-size: auto 373px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: image-set(url("../img/index/welcom-mobile@2x.webp"), url("../img/index/welcom-mobile@2x.jpg"));
+    background-size: auto 373px;
+  }
+}
+
+.welcom__title {
+  width: 260px;
+  margin: 0 auto 120px;
+  text-align: center;
+}

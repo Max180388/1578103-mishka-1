@@ -1,8 +1,17 @@
 .nav {
   position: relative;
 
-  @media (min-width: $tablet) {
+  @include t {
     padding: 0 50px;
+    position: relative;
+  }
+
+  @include d {
+    width: 1050px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 5;
   }
 }
 
@@ -53,7 +62,7 @@
   display: block;
   transition: background-color 0.7s ease;
 
-  @media (min-width: $tablet) {
+  @include t {
     display: none;
   }
 }
@@ -104,13 +113,19 @@
 }
 
 .nav__lists-wrap {
+  background-color: #ffffff;
   transition:
     top 1s ease-in-out,
     display 5s ease 5s;
 
-  @media (min-width: $tablet) {
+  @include t {
     display: grid;
     grid-template-columns: 319px 1fr;
+  }
+
+  @include d {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 200px;
   }
 }
 
@@ -118,11 +133,11 @@
   width: 100%;
   background-color: #ffffff;
   position: absolute;
-  top: -600px;
+  top: -900px;
   left: 0;
   z-index: 5;
 
-  @media (min-width: $tablet) {
+  @include t {
     position: static;
     background-color: transparent;
   }
@@ -136,7 +151,7 @@
   left: 0;
   z-index: 5;
 
-  @media (min-width: $tablet) {
+  @include t {
     position: static;
     background-color: transparent;
   }
@@ -146,7 +161,8 @@
   padding: 24px 0 21px 22px;
   position: relative;
 
-  @media (min-width: $tablet) {
+  @include t {
+    max-width: 234px;
     box-sizing: border-box;
     padding: 27px 0;
   }
@@ -160,7 +176,7 @@
     position: absolute;
     left: 0;
 
-    @media (min-width: $tablet) {
+    @include t {
       display: none;
     }
   }
@@ -171,6 +187,10 @@
 
   &:last-child::after {
     bottom: 0;
+
+    @include d {
+      left: unset;
+    }
   }
 }
 
@@ -180,7 +200,7 @@
   margin: 0 auto;
   padding: 5px 0;
 
-  @media (min-width: $tablet) {
+  @include t {
     width: unset;
   }
 
@@ -205,16 +225,48 @@
   }
 }
 
+.nav__submenu-wrap {
+  display: none;
+
+  @include t {
+    grid-column: 2/3;
+  }
+
+  @include d {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 200px;
+  }
+}
+
 .nav-advantages {
   margin: 0;
   display: none;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 400;
+}
 
-  @media (min-width: $tablet) {
+.nav-advantages--tablet {
+  @include t {
+    max-width: 280px;
     display: block;
-    order: 3;
-    text-align: right;
     padding-top: 20px;
-    font-size: 15px;
-    font-weight: 400;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: end;
+  }
+
+  @include d {
+    display: none;
+  }
+}
+
+.nav-advantages--desktop {
+  @include d {
+    max-width: 280px;
+    display: block;
+    padding-top: 20px;
+    justify-self: end;
   }
 }

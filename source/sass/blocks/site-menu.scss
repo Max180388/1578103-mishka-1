@@ -1,26 +1,53 @@
 .site-menu {
   @include ul-null;
 
-  @media (min-width: $tablet) {
+  @include t {
+    align-self: start;
     order: 2;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px 36px;
+    gap: 0 36px;
     font-size: 15px;
   }
 
-  @media (min-width: $desktop) {
+  @include d {
+    max-width: 425px;
+    order: initial;
     font-size: 17px;
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 185px 210px;
+    gap: 0 35px;
+    z-index: 5;
   }
 }
 
 .site-menu__item {
-  @media (min-width: $tablet) {
+  @include t {
+    max-width: 140px;
     padding: 16px 0 0 0;
+  }
+
+  @include d {
+    max-width: 200px;
+    padding: 28px 0 0 0;
+  }
+
+  &:nth-child(2n + 1)::after {
+    @include d {
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: #ececec;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+    }
   }
 }
 
 .site-menu__link {
   text-decoration: none;
-  color: #000000;
+  color: inherit;
 }

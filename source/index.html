@@ -21,7 +21,8 @@
         <picture>
           <source media="(min-width: 1150px)" srcset="./img/desktop-header-logo.svg">
           <source media="(min-width: 768px)" srcset="./img/tablet-header-logo.svg">
-          <img class="header__logo-image" src="./img/mobile-header-logo.svg" alt="Mishka товары ручной работы" width="86" height="35">
+          <img class="header__logo-image" src="./img/mobile-header-logo.svg" alt="Mishka товары ручной работы"
+            width="86" height="35">
         </picture>
       </a>
     </div>
@@ -50,6 +51,9 @@
             <a href="#" class="nav__link user-menu__link user-menu__link--cart">Корзина: пока пуста</a>
           </li>
         </ul>
+        <p class="nav-advantages nav-advantages--tablet">Бесплатная доставка по России</p>
+      </div>
+      <div class="nav__submenu-wrap">
         <ul class="nav__list submenu">
           <li class="nav__item submenu__item">
             <a href="#" class="nav__link submenu__link">Новые поступления</a>
@@ -58,11 +62,23 @@
             <a href="#" class="nav__link submenu__link">Распродажа</a>
           </li>
         </ul>
-        <p class="nav-advantages">Бесплатная доставка по России</p>
+        <p class="nav-advantages nav-advantages--desktop">Бесплатная доставка по России</p>
       </div>
     </nav>
   </header>
-  <main class="content__maim">
+  <main class="content__maim main">
+    <h1 class="visually-hidden">Mishka магазин изделий ручно работы</h1>
+    <section class="main__welcom welcom">
+      <h2 class="welcom__title mine-title">Милые штуки ручной работы&nbsp;для дома</h2>
+      <div class="welcom__links-wrap">
+          <a href="#" class="welcom__link welcom-button welcom-button--left">
+            <span class="welcom-button__text">Предметы интерьера</span>
+          </a>
+          <a href="#" class="welcom__link welcom-button welcom-button--right">
+            <span class="welcom-button__text">Детские игрушки</span>
+          </a>
+      </div>
+    </section>
   </main>
   <footer></footer>
   <script src="./js/sctipt.js"></script>
