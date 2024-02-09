@@ -1,0 +1,54 @@
+.user-feedback__text {
+  max-width: 500px;
+  margin: 0 0 33px;
+  color: #444444;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 30px;
+
+  @include t {
+    max-width: 100%;
+    margin: 0 0 60px;
+    font-size: 17px;
+  }
+
+  @include d {
+    margin: 0 0 43px;
+  }
+}
+
+.user-feedback__user-name {
+  width: 250px;
+  margin: 0 0 3px;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+
+  @include t {
+    width: 300px;
+    font-size: 18px;
+  }
+
+  @include d {
+    width: 450px;
+    font-size: 17px;
+  }
+}
+
+.user-feedback__user-id {
+  width: 250px;
+  margin: 0;
+  color: #444444;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+
+  @include t {
+    width: 300px;
+  }
+
+  @include d {
+    width: 450px;
+  }
+}

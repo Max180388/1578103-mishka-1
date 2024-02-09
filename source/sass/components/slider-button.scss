@@ -1,0 +1,67 @@
+.slider-button {
+  @include button-null;
+  width: 130px;
+  height: 50px;
+  background-image: url("../img/index/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: 50px 26px;
+  position: relative;
+
+  @include t {
+    width: 50px;
+    height: 26px;
+  }
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #ececec;
+    position: absolute;
+    top: 0;
+    left: -1px;
+
+    @include t {
+      display: none;
+    }
+  }
+
+  &--previous {
+    transform: rotate(180deg);
+    background-position: right 37px top 50%;
+
+    @include t {
+      background-position: 50% 50%;
+    }
+  }
+
+  &--next {
+    background-position: right 41px top 50%;
+
+    @include t {
+      background-position: 50% 50%;
+    }
+  }
+}
+
+.slider-button:hover {
+  opacity: 0.6;
+}
+
+.slider-button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+}
+
+@supports not selector(:focus-visible) {
+  .slider-button:focus {
+    .slider-button:focus-visible {
+      outline: none;
+      opacity: 0.6;
+    }
+  }
+}
+
+.slider-button:active {
+  opacity: 0.3;
+}

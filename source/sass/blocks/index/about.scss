@@ -1,0 +1,124 @@
+.about {
+  padding: 31px 30px 20px;
+
+  @include t {
+    padding: 56px 50px 52px;
+  }
+
+  @include d {
+    width: 1050px;
+    margin: 0 auto;
+    padding: 68px 50px 40px;
+  }
+}
+
+.about__title {
+  width: 250px;
+  margin: 0 0 28px;
+
+  @include t {
+    width: 450px;
+    margin: 0 0 41px;
+  }
+
+  @include d {
+    margin-left: 175px;
+  }
+}
+
+.about__list {
+  @include ul-null;
+
+  @include t {
+    width: 649px;
+    margin: 0 auto;
+    padding-right: 18px;
+    columns: 2;
+  }
+
+  @include d {
+    width: 681px;
+  }
+}
+
+.about__item {
+  max-width: 350px;
+  padding-top: 55px;
+  padding-right: 10px;
+  position: relative;
+
+  @include t {
+    max-width: unset;
+    width: 295px;
+  }
+
+  &::before {
+    content: "";
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &--materials::before {
+    width: 49px;
+    height: 38px;
+    background-image: url("../img/index/materials.svg");
+  }
+
+  &--price::before {
+    width: 47px;
+    height: 29px;
+    background-image: url("../img/index/price.svg");
+  }
+
+  &--like::before {
+    width: 48px;
+    height: 38px;
+    background-image: url("../img/index/like.svg");
+  }
+
+  &--handmade::before {
+    width: 41px;
+    height: 39px;
+    background-image: url("../img/index/handmade.svg");
+  }
+
+  &--support::before {
+    width: 55px;
+    height: 31px;
+    background-image: url("../img/index/support.svg");
+    left: -6px;
+  }
+
+  &--packaging::before {
+    width: 39px;
+    height: 35px;
+    background-image: url("../img/index/packaging.svg");
+  }
+}
+
+.about__item:not(:last-child) {
+  margin-bottom: 28px;
+
+  @include t {
+    margin-bottom: 57px;
+  }
+
+  @include d {
+    margin-bottom: 55px;
+  }
+}
+
+.about__text {
+  margin: 0;
+  font-weight: 700;
+  line-height: 20px;
+
+  @include t {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}

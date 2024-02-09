@@ -2,15 +2,26 @@
 @import "./global/visually-hidden.scss";
 @import "./global/variables.scss";
 @import "./global/mixin.scss";
-
 @import "./components/mine-title.scss";
-
+@import "./components/specifications.scss";
+@import "./components/button.scss";
+@import "./components/second-title.scss";
+@import "./components/user-feedback.scss";
+@import "./components/slider-button.scss";
+@import "./components/modal-radio-input.scss";
 @import "./blocks/content.scss";
 @import "./blocks/header.scss";
 @import "./blocks/nav.scss";
 @import "./blocks/site-menu.scss";
 @import "./blocks/user-menu.scss";
 @import "./blocks/submenu.scss";
-@import "./blocks/index/main.scss";
 @import "./blocks/index/welcom.scss";
 @import "./blocks/index/welcom-button.scss";
+@import "./blocks/index/product-week.scss";
+@import "./blocks/index/about.scss";
+@import "./blocks/index/reviews.scss";
+@import "./blocks/index/contacts.scss";
+@import "./blocks/index/map.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/modal-content.scss";

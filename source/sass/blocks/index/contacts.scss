@@ -1,0 +1,194 @@
+.contacts {
+  padding: 38px 0;
+
+  @include t {
+    padding: 69px 0 57px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 47px;
+      height: 81px;
+      background-image: url("../img/index/flag.svg");
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 47px 81px;
+      position: absolute;
+      top: 47px;
+      right: 53px;
+    }
+
+    @media (min-width: $desktop) {
+      &::after {
+        top: 133px;
+        right: unset;
+        left: 63px;
+      }
+    }
+  }
+
+  @include d {
+    padding: 150px 0 105px;
+    width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+.contacts__title {
+  width: 200px;
+  margin: 0 30px 28px;
+
+  @include t {
+    width: 300px;
+    margin: 0 50px 49px;
+  }
+
+  @include d {
+    width: 320px;
+    margin: 0 0 35px 173px;
+  }
+}
+
+.contacts__list {
+  margin: 0 30px 62px;
+  color: #444444;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+
+  @include t {
+    margin: 0 50px 48px;
+    font-size: 17px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include d {
+    width: 310px;
+    margin: 0 0 84px 174px;
+    display: block;
+  }
+}
+
+.contacts__list-wrap {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  @include t {
+    margin-bottom: 0;
+  }
+
+  @include d {
+    margin-bottom: 30px;
+    gap: 8px;
+  }
+}
+
+.contacts__name {
+  width: 70px;
+}
+
+.contacts__value {
+  width: 180px;
+  margin: 0;
+
+  @include t {
+    width: 230px;
+  }
+}
+
+.contacts__email {
+  padding-bottom: 3px;
+  color: #444444;
+  text-decoration: none;
+  position: relative;
+
+  @include d {
+    padding-bottom: 9px;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #62d1ba;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.contacts__email:hover {
+  color: #46c1ae;
+
+  &::after {
+    background-color: #46c1ae;
+  }
+}
+
+.contacts__email:focus-visible {
+  outline: none;
+  color: #46c1ae;
+
+  &::after {
+    background-color: #46c1ae;
+  }
+}
+
+@supports not selector(:focus-visible) {
+  .contacts__email:focus {
+    outline: none;
+    color: #46c1ae;
+
+    &::after {
+      background-color: #46c1ae;
+    }
+  }
+}
+
+.contacts__email:active {
+  color: #46c1ae;
+
+  &::after {
+    display: none;
+  }
+}
+
+.contacts__addres {
+  font-style: normal;
+}
+
+.contacts__map {
+  margin-bottom: 42px;
+
+  @include t {
+    margin-bottom: 55px;
+  }
+
+  @include d {
+    position: absolute;
+    top: 71px;
+    right: 0;
+  }
+}
+
+.contacts__link {
+  min-width: 260px;
+  width: unset;
+  max-width: 710px;
+  display: block;
+  margin: 0 30px;
+
+  @include t {
+    min-width: unset;
+    width: 230px;
+    max-width: unset;
+    margin: 0 auto;
+  }
+
+  @include d {
+    margin: 0 0 0 175px;
+  }
+}

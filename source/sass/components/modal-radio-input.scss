@@ -1,0 +1,68 @@
+.modal-radio-input__label {
+  width: 78px;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  color: #444444;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  position: relative;
+
+  @include t {
+    width: 108px;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(68, 68, 68, 0.4);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: none;
+    border: 2px solid #63d1bb;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+  }
+}
+
+.modal-radio-input__input:checked + .modal-radio-input__label::after {
+  display: block;
+}
+
+.modal-radio-input__input:hover + .modal-radio-input__label::before {
+  border-color: #62d1ba;
+}
+
+.modal-radio-input__input:focus-visible + .modal-radio-input__label::after {
+  outline: none;
+  opacity: 0.6;
+}
+
+@supports not selector(:focus-visible) {
+  .modal-radio-input__input:focus-visible + .modal-radio-input__label::after:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+}
+
+.modal-radio-input__input:active + .modal-radio-input__label::before,
+.modal-radio-input__input:active + .modal-radio-input__label::after {
+  border-color: rgba(68, 68, 68, 0.3);
+}

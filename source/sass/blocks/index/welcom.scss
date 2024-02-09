@@ -1,15 +1,62 @@
 .welcom {
-  min-height: 350px;
+  min-height: 200px;
   padding-top: 73px;
   background-color: #fafafa;
   background-image: image-set(url("../img/index/welcom-mobile.webp"), url("../img/index/welcom-mobile.jpg"));
-  background-position: 50% -17px;
+  background-position: left 50% bottom 133px;
   background-repeat: no-repeat;
   background-size: auto 373px;
+  position: relative;
 
   @media (min-resolution: 2dppx) {
     background-image: image-set(url("../img/index/welcom-mobile@2x.webp"), url("../img/index/welcom-mobile@2x.jpg"));
-    background-size: auto 373px;
+  }
+
+  @include t {
+    min-height: 400px;
+    padding-top: 106px;
+    padding-bottom: 1px;
+    background-image: image-set(url("../img/index/welcom-tablet.webp"), url("../img/index/welcom-tablet.jpg"));
+    background-position: left 50% bottom 13px;
+    background-repeat: no-repeat;
+    background-size: auto 746px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: image-set(url("../img/index/welcom-tablet@2x.webp"), url("../img/index/welcom-tablet@2x.jpg"));
+    }
+
+    @include d {
+      padding-top: 103px;
+      padding-bottom: 5px;
+      background-position: left 50% bottom 17px;
+    }
+  }
+
+  &::after {
+    @include t {
+      content: "";
+      width: 100%;
+      height: 34px;
+      background-image: url("../img/index/zigzag-welcom.svg");
+      background-position: 50% 100%;
+      background-repeat: repeat-x;
+      background-size: auto;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    @include d {
+      height: 35px;
+      background-size: 1250px 34px;
+    }
+  }
+}
+
+.welcom-wrap {
+  @include d {
+    width: 1050px;
+    margin: 0 auto;
   }
 }
 
@@ -17,4 +64,26 @@
   width: 260px;
   margin: 0 auto 120px;
   text-align: center;
+
+  @include t {
+    width: 530px;
+    margin: 0 auto 370px;
+  }
+
+  @include d {
+    width: 650px;
+    margin: 0 auto 355px;
+  }
+}
+
+.welcom__links-wrap {
+  @include t {
+    margin: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include d {
+    margin: 0;
+  }
 }

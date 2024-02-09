@@ -3,179 +3,346 @@
   min-height: 103px;
   display: block;
   box-sizing: border-box;
-  padding: 24px 105px 24px 29px;
+  padding: 24px 105px 24px 30px;
   text-decoration: none;
   position: relative;
+  transition: padding 0.3s ease-in-out;
 
-  &::before {
-    content: "";
-    width: 70px;
-    height: 70px;
-    opacity: 0.5;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: auto;
-    position: absolute;
-  }
-
-  &::after {
-    content: "";
-    width: 100%;
-    height: 5px;
-    display: none;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    z-index: 5;
-  }
-
-  &:hover::after {
-    display: block;
-  }
-
-  &:focus-visible::after {
-    display: block;
-  }
-
-  @supports not selector(:focus-visible) {
-    &:focus::after {
-      display: block;
-    }
-  }
-
-  &:active::after {
-    display: none;
+  @include t {
+    min-height: 131px;
+    padding: 27px 105px 21px 36px;
   }
 }
 
-.welcom-button--left {
-  background-color: #63d1bb;
+.welcom-button:hover {
+  padding-top: 19px;
+  padding-bottom: 29px;
 
+  @include t {
+    padding-top: 22px;
+    padding-bottom: 26px;
+  }
+}
+
+.welcom-button:focus-visible {
+  outline: none;
+  padding-top: 19px;
+  padding-bottom: 29px;
+
+  @include t {
+    padding-top: 22px;
+    padding-bottom: 26px;
+  }
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:focus {
+    outline: none;
+    padding-top: 19px;
+    padding-bottom: 29px;
+
+    @include t {
+      padding-top: 22px;
+      padding-bottom: 26px;
+    }
+  }
+}
+
+.welcom-button:active {
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include t {
+    padding-top: 27px;
+    padding-bottom: 21px;
+  }
+}
+
+.welcom-button:nth-child(2n + 1) {
+  background-color: #63d1bb;
+}
+
+.welcom-button:nth-child(2n) {
+  background-color: #56c3b2;
+}
+
+.welcom-button:nth-child(4n + 1),
+.welcom-button:nth-child(4n) {
+  @include t {
+    background-color: #63d1bb;
+  }
+}
+
+.welcom-button:nth-child(4n-2),
+.welcom-button:nth-child(4n-1) {
+  @include t {
+    background-color: #56c3b2;
+  }
+}
+
+.welcom-button:nth-child(2n + 1):hover {
+  background-color: #59d5bc;
+}
+
+.welcom-button:nth-child(2n):hover {
+  background-color: #46c1ae;
+}
+
+.welcom-button:nth-child(4n + 1):hover,
+.welcom-button:nth-child(4n):hover {
+  @include t {
+    background-color: #59d5bc;
+  }
+}
+
+.welcom-button:nth-child(4n-2):hover,
+.welcom-button:nth-child(4n-1):hover {
+  @include t {
+    background-color: #46c1ae;
+  }
+}
+
+.welcom-button:nth-child(2n + 1):focus-visible {
+  background-color: #59d5bc;
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:nth-child(2n + 1):focus {
+    background-color: #59d5bc;
+  }
+}
+
+.welcom-button:nth-child(2n):focus-visible {
+  background-color: #46c1ae;
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:nth-child(2n):focus {
+    background-color: #46c1ae;
+  }
+}
+
+.welcom-button:nth-child(4n + 1):focus-visible,
+.welcom-button:nth-child(4n):focus-visible {
+  @include t {
+    background-color: #59d5bc;
+  }
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:nth-child(4n + 1):focus,
+  .welcom-button:nth-child(4n):focus {
+    @include t {
+      background-color: #59d5bc;
+    }
+  }
+}
+
+.welcom-button:nth-child(4n-2):focus-visible,
+.welcom-button:nth-child(4n-1):focus-visible {
+  @include t {
+    background-color: #46c1ae;
+  }
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:nth-child(4n-2):focus,
+  .welcom-button:nth-child(4n-1):focus {
+    @include t {
+      background-color: #46c1ae;
+    }
+  }
+}
+
+.welcom-button:nth-child(2n + 1):active {
+  background-color: #59d5bc;
+}
+
+.welcom-button:nth-child(2n):active {
+  background-color: #46c1ae;
+}
+
+.welcom-button:nth-child(4n + 1):active,
+.welcom-button:nth-child(4n):active {
+  @include t {
+    background-color: #59d5bc;
+  }
+}
+
+.welcom-button:nth-child(4n-2):active,
+.welcom-button:nth-child(4n-1):active {
+  @include t {
+    background-color: #46c1ae;
+  }
+}
+
+.welcom-button::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  opacity: 0.5;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: absolute;
+  transition: top 0.3s ease-in-out;
+}
+
+.welcom-button::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: top 0.3s ease-in-out;
+}
+
+.welcom-button:hover:nth-child(2n + 1)::after {
+  background-color: #59d5bc;
+}
+
+.welcom-button:hover:nth-child(2n)::after {
+  background-color: #46c1ae;
+}
+
+.welcom-button:hover:nth-child(4n + 1)::after,
+.welcom-button:hover:nth-child(4n)::after {
+  @include t {
+    background-color: #59d5bc;
+  }
+}
+
+.welcom-button:hover:nth-child(4n-2)::after,
+.welcom-button:hover:nth-child(4n-1)::after {
+  @include t {
+    background-color: #46c1ae;
+  }
+}
+
+.welcom-button:hover::after {
+  top: -5px;
+  z-index: 5;
+}
+
+.welcom-button:focus-visible::after {
+  top: -5px;
+  z-index: 5;
+}
+
+@supports not selector(:focus-visible) {
+  .welcom-button:focus::after {
+    top: -5px;
+    z-index: 5;
+  }
+}
+
+.welcom-button:active::after {
+  top: 0;
+  z-index: -1;
+}
+
+.welcom-button--interior {
   &::before {
     background-image: url("../img/index/interior.svg");
     top: 19px;
     right: 21px;
-  }
 
-  &::after {
-    background-color: #59d5bc;
-  }
-
-  &:hover {
-    background-color: #59d5bc;
-  }
-
-  &:focus-visible {
-    outline: none;
-    background-color: #59d5bc;
-  }
-
-  @supports not selector(:focus-visible) {
-    &:focus {
-      outline: none;
-      background-color: #59d5bc;
+    @include t {
+      top: 27px;
+      right: 21px;
     }
-  }
-
-  &:active {
-    background-color: #59d5bc;
   }
 
   &:hover::before {
     opacity: 0.7;
     top: 14px;
+
+    @include t {
+      top: 22px;
+    }
   }
 
   &:focus-visible::before {
     opacity: 0.7;
     top: 14px;
+
+    @include t {
+      top: 22px;
+    }
   }
 
   @supports not selector(:focus-visible) {
     &:focus::before {
       opacity: 0.7;
       top: 14px;
+
+      @media (min-width: $tablet) {
+        top: 22px;
+      }
     }
   }
 
   &:active::before {
     opacity: 0.3;
     top: 19px;
+
+    @include t {
+      top: 27px;
+    }
   }
 }
 
-.welcom-button--right {
-  background-color: #56c3b2;
-
+.welcom-button--toy {
   &::before {
     background-image: url("../img/index/toy.svg");
     top: 16px;
     right: 22px;
-  }
 
-  &::after {
-    background-color: #46c1ae;
-  }
-
-  &:hover {
-    background-color: #46c1ae;
-  }
-
-  &:focus-visible {
-    outline: none;
-    background-color: #46c1ae;
-  }
-
-  @supports not selector(:focus-visible) {
-    &:focus {
-      outline: none;
-      background-color: #46c1ae;
+    @include t {
+      top: 28px;
+      right: 28px;
     }
-  }
-
-  &:active {
-    background-color: #46c1ae;
   }
 
   &:hover::before {
     opacity: 0.7;
     top: 11px;
+
+    @include t {
+      top: 23px;
+    }
   }
 
   &:focus-visible::before {
     opacity: 0.7;
     top: 11px;
+
+    @include t {
+      top: 23px;
+    }
   }
 
   @supports not selector(:focus-visible) {
     &:focus::before {
       opacity: 0.7;
       top: 11px;
+
+      @media (min-width: $tablet) {
+        top: 23px;
+      }
     }
   }
 
   &:active::before {
     opacity: 0.3;
     top: 16px;
+
+    @include t {
+      top: 28px;
+    }
   }
-}
-
-.welcom-button:hover {
-  padding-top: 19px;
-}
-
-.welcom-button:focus-visible {
-  padding-top: 19px;
-}
-
-@supports not selector(:focus-visible) {
-  .welcom-button:focus {
-    padding-top: 19px;
-  }
-}
-
-.welcom-button:active {
-  padding-top: 24px;
 }
 
 .welcom-button__text {
@@ -185,4 +352,9 @@
   font-size: 19px;
   font-weight: 700;
   line-height: 24px;
+
+  @include t {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }

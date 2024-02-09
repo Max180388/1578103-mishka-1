@@ -1,0 +1,57 @@
+.button {
+  min-width: 260px;
+  width: 100%;
+  max-width: 710px;
+  min-height: 52px;
+  display: block;
+  box-sizing: border-box;
+  padding: 14px 10px;
+  border: 2px solid #444444;
+  color: #444444;
+  background-color: #ffffff;
+  font-family: $opensans;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.4s ease-in-out 0.25s;
+
+  &--decor {
+    color: #ffffff;
+    background-color: #63d1bb;
+    border: none;
+  }
+
+  @include t {
+    width: 292px;
+    font-size: 17px;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: #444444;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: #ffffff;
+    background-color: #444444;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: none;
+      color: #ffffff;
+      background-color: #444444;
+    }
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0s ease;
+  }
+}
