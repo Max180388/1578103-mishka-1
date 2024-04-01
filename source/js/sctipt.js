@@ -16,7 +16,6 @@ productWeekButton.addEventListener('click', (e) => {
   modal.classList.remove('modal--close');
 });
 
-modal.addEventListener('click', (e) => {
-  e.preventDefault();
+modal.addEventListener('click', () => {
   modal.classList.add('modal--close')
 });
